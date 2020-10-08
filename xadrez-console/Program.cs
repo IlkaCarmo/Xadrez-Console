@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using tabuleiro;
 using xadrez;
 
@@ -33,6 +34,7 @@ namespace xadrez_console
                     Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().ToPosicao();
+                    partida.validarPosicaoDeDestino(origem, destino);
 
                     partida.realizaJogada(origem, destino);
                     }
