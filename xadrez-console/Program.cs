@@ -18,8 +18,6 @@ namespace xadrez_console
                     Console.Clear();
                      Tela.imprimirPartida(partida);
 
-                   
-
                     Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().ToPosicao();
