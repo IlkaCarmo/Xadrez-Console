@@ -33,7 +33,7 @@ namespace xadrez
 
             Posicao pos = new Posicao(0, 0);
 
-            //NO 
+            
             if (cor == Cor.Branca)
             {
                 pos.definirValores(posicao.linha - 1, posicao.coluna);
@@ -41,18 +41,21 @@ namespace xadrez
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(pos.linha - 2, pos.coluna);
-                if (tab.posicaoValida(pos) && livre(pos))
+
+                pos.definirValores(posicao.linha - 2, posicao.coluna);
+                if (tab.posicaoValida(pos) && livre(pos) && qteMovimento ==0)
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(pos.linha - 1, pos.coluna - 1);
-                if (tab.posicaoValida(pos) && livre(pos))
+
+                pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+                if (tab.posicaoValida(pos)  && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(pos.linha - 1, pos.coluna + 1);
-                if (tab.posicaoValida(pos) && livre(pos))
+
+                pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+                if (tab.posicaoValida(pos) && existeInimigo(pos)) 
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
@@ -64,18 +67,21 @@ namespace xadrez
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(pos.linha + 2, pos.coluna);
-                if (tab.posicaoValida(pos) && livre(pos))
+
+                pos.definirValores(posicao.linha + 2, posicao.coluna);
+                if (tab.posicaoValida(pos) && livre(pos) && qteMovimento == 0)
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(pos.linha + 1, pos.coluna - 1);
-                if (tab.posicaoValida(pos) && livre(pos))
+
+                pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+                if (tab.posicaoValida(pos)  && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(pos.linha + 1, pos.coluna + 1);
-                if (tab.posicaoValida(pos) && livre(pos))
+
+                pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+                if (tab.posicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
